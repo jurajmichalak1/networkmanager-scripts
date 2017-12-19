@@ -13,6 +13,9 @@ This is a place where many network management tools lack abstraction of one netw
 ### How does this script work?
 NetworkManager executes dispatcher scripts on network events and our script 'wlan_auto_toggle_with_mac_clone.sh' listens on ethernet interface events. When ethernet connection is disconnected from any reason (ethernet cable disconnection, ethernet interface crash), it gets MAC address of deactivated ethernet interface and activates wireless adapter with that MAC address. This results to obtaining same IP address if your LAN has one DHCP server with same IP subnet for both ethernet and Wi-Fi LAN.
 
+### Setup
+Read instructions directly inside wlan_auto_toggle_cloned_mac.sh script file.
+
 ### Debugging
 This script's output is logged by nm-dispatcher process to standard system's log file (/var/log/messages or /var/log/daemon.log) or you can check messages via 'journalctl' command.
 When it successfully works you can see following output:
